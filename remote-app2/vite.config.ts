@@ -22,7 +22,15 @@ export default defineConfig({
       exposes: {
         './App': './src/App.jsx',
       },
-      shared: ['react', 'react-dom', 'antd'],
+      remotes: {
+        host: 'http://localhost:3000/assets/remoteEntry.js', // URL của host-app
+      },
+      shared: [
+        'react',
+        'react-dom',
+        'antd',
+        'zustand',
+      ],
     }),
   ],
   preview: {

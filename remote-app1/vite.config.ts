@@ -1,7 +1,7 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
 import federation from '@originjs/vite-plugin-federation';
+import react from '@vitejs/plugin-react';
 import { fileURLToPath, URL } from "node:url";
+import { defineConfig } from 'vite';
 
 export default defineConfig({
   resolve: {
@@ -22,7 +22,15 @@ export default defineConfig({
       exposes: {
         './App': './src/App.jsx',
       },
-      shared: ['react', 'react-dom', 'antd'],
+      remotes: {
+        host: 'http://localhost:3000/assets/remoteEntry.js', // URL của host-app
+      },
+      shared: [
+        'react',
+        'react-dom',
+        'antd',
+        'zustand',
+      ],
     }),
   ],
   preview: {
