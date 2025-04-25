@@ -26,9 +26,12 @@ export default defineConfig({
     }),
   ],
   preview: {
-    port: 3001,
+    port: 3002,
+    cors: true,
   },
   server: {
     port: 3002,
+    cors: true,
+    hmr: true,
   },
 });
