@@ -38,10 +38,12 @@ export default defineConfig({
   preview: {
     port: 3000,
     cors: true,
+    open: true,
   },
   server: {
     port: 3000,
     cors: true,
     hmr: true,
+    open: true,
   },
 });
